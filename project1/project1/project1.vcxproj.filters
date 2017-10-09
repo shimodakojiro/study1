@@ -4,10 +4,87 @@
     <Filter Include="Source">
       <UniqueIdentifier>{22f080ef-0bf2-4790-bdb4-f25750048b25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{7cf61275-c882-4a9f-8d94-23b4c28b5a5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Scene">
+      <UniqueIdentifier>{0a922d26-ae86-4b2a-9963-42c036f7bf20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Scene">
+      <UniqueIdentifier>{a11f87d0-28ae-41af-94ec-e74ed5ad2e75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameObject">
+      <UniqueIdentifier>{e65b1f74-dee6-4153-b9cc-2aa6a3e06af0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\GameObject">
+      <UniqueIdentifier>{e979a570-76f8-4a9e-9f6d-5359ecedc0e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameObject\Player">
+      <UniqueIdentifier>{572026b3-b41c-4479-afef-142a27199a61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameObject\Enemy">
+      <UniqueIdentifier>{a87791f3-e163-461a-b88a-5bd204addcbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameObject\Bullet">
+      <UniqueIdentifier>{5750dc57-2232-4fb5-99bc-f4f5c243ba4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\GameObject\Player">
+      <UniqueIdentifier>{cdd4ce1c-290b-412b-bd2f-c79d99c94263}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\GameObject\Enemy">
+      <UniqueIdentifier>{9eb4624f-8099-4996-a627-f106469f6400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\GameObject\Bullet">
+      <UniqueIdentifier>{1e382eae-b516-485e-9c46-ef721825f619}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="..\Source\Scene\SceneMain.cpp">
+      <Filter>Source\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Game\GameBase.cpp">
+      <Filter>Source\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Game\Player\Player.cpp">
+      <Filter>Source\GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Game\Bullet\Bullet.cpp">
+      <Filter>Source\GameObject\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Game\Bullet\BulletManager.cpp">
+      <Filter>Source\GameObject\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Game\Graphic.cpp">
+      <Filter>Source\GameObject</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Header\Scene\SceneBase.h">
+      <Filter>Header\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Scene\SceneMain.h">
+      <Filter>Header\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\main.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Game\GameBase.h">
+      <Filter>Header\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Game\Player\Player.h">
+      <Filter>Header\GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Game\Bullet\Bullet.h">
+      <Filter>Header\GameObject\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Game\Bullet\BulletManager.h">
+      <Filter>Header\GameObject\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Game\Graphic.h">
+      <Filter>Header\GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
