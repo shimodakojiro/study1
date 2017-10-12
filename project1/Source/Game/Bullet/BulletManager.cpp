@@ -7,26 +7,30 @@
 
 CBulletManager::CBulletManager()
 {
-//	itr = m_Bullet.begin();
-	m_Bullet = std::make_unique<CBullet>();
+	m_Bullet.push_back(CBullet());
+	itr = m_Bullet.begin();
+//	m_Bullet = std::make_unique<CBullet>();
 }
 
 CBulletManager::~CBulletManager()
 {
-//	m_Bullet.clear();
+	m_Bullet.clear();
+//	m_Bullet->Delete();
 }
 
 void CBulletManager::SetTextureId(const int &idx)
 {
 	texid = idx;
-	m_Bullet->SetTextureId(texid);
+	itr->SetTextureId(texid);
 }
 
 void CBulletManager::Initialize()
 {
-	m_Bullet->SetPlayerPos(m_PlayerPos);
+	itr->SetPlayerPos(m_PlayerPos);
 
-	m_Bullet->Initialize();
+	itr->Initialize();
+
+	i = 0;
 
 //	m_RepCounter = m_MaxRepCounter;
 //	m_RepOn = false;
@@ -36,26 +40,46 @@ void CBulletManager::Initialize()
 
 void CBulletManager::Update()
 {
-	m_Bullet->SetPlayerPos(m_PlayerPos);
-
-//	m_OldInput = m_NowInput;
-
-	if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0){
-		m_Bullet->BulletCreate();
+	for (itr = m_Bullet.begin(); itr != m_Bullet.end();){
+	itr->SetPlayerPos(m_PlayerPos);
+		itr->Update();
+		itr++;
 	}
-//	if (m_Bullet->GetFlag()){
-		m_Bullet->Update();
-//	}
+	
+/*	if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0){
+		i++;
+		if (i >= 60){
+			m_Bullet.push_back(CBullet());
+			itr = m_Bullet.end();
+			itr--;
+			itr->SetTextureId(texid);
+			itr->SetPlayerPos(m_PlayerPos);
+			itr->Initialize();
+			i = 0;
+		}
+	}
+	*/
+
+//	if (!itr->GetFlag()){
+		//イテレーターの指定にあった要素を削除
+//		itr = m_Bullet.erase(itr);
+//		}
 }
 
 void CBulletManager::Render()
 {
-	m_Bullet->Render();
+	for (itr = m_Bullet.begin(); itr != m_Bullet.end();){
+		itr->Render();
+		itr++;
+	}
 }
 
 void CBulletManager::Delete()
 {
-
+	for (itr = m_Bullet.begin(); itr != m_Bullet.end();){
+		itr->Delete();
+		itr++;
+	}
 }
 
 

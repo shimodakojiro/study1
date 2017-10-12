@@ -2,7 +2,7 @@
 #ifndef __BULLETMANAGER_H__
 #define __BULLETMANAGER_H__
 
-#include<vector>
+#include<list>
 #include<iterator>
 
 #include"../../Header/Game/Bullet/Bullet.h"
@@ -10,10 +10,13 @@
 class CBulletManager :public CGameBase
 {
 private:
-	std::unique_ptr<CBullet>m_Bullet;
+//	std::unique_ptr<CBullet>m_Bullet;
 //	std::vector<std::unique_ptr<CBullet>>m_Bullet;
-//	std::vector<CBullet>::iterator itr;
+	std::list<CBullet>m_Bullet;
+	std::list<CBullet>::iterator itr;
 	Vector2 m_PlayerPos;
+
+	int i;
 
 	//長押し時のリピートカウンタ
 	int m_RepCounter;

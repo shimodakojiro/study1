@@ -47,7 +47,6 @@ void CBullet::Delete()
 	DeleteGraph(texid);
 }
 
-
 void CBullet::BulletCreate()
 {
 	pos = m_PlayerPos;

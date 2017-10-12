@@ -20,8 +20,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 	}
 
-//	CSceneBase *m_scene = new CSceneTitle();
-	CSceneBase *scene = new CSceneMain();
+	std::unique_ptr<CSceneBase>scene;
+//	scene = std::make_unique<CSceneTitle>();
+	scene = std::make_unique<CSceneMain>();
 
 	scene->Load();
 	scene->Initialize();
@@ -34,7 +35,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	scene->Delete();
 
-	delete scene;
 	DxLib_End();
 
 	return 0; 

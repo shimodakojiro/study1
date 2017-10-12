@@ -10,10 +10,11 @@ private:
 	int m_Frame;
 	const float mSpeedX = 0.02f;
 	const float mSpeedY = 0.00f;
-	const int m_MaxFrame = 60;
+	const int m_MaxFrame = 20;
 
 public:
 	CBullet();
+	CBullet(Vector2);
 	~CBullet();
 	void Initialize();
 	void Update();
