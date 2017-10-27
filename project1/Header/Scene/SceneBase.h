@@ -12,8 +12,8 @@ public:
 	virtual void Load(){}
 	virtual void Initialize(){}
 	//	XVE•`‰æ
-	virtual void keystate(){}
-	virtual void Update(){}
+	virtual bool KeyState(){ return true; }
+	virtual bool Update(){ return true; }
 	virtual void Render(){}
 	virtual void Delete(){}
 };

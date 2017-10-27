@@ -11,7 +11,7 @@ private:
 public:
 	CGraphic();
 	~CGraphic();
-	void Load();
+	void Load(const std::shared_ptr<CTexture>&);
 
 	int GetPlayerTextureId(){ return m_Player; }
 	int GetEnemyTextureId(){ return m_Enemy; }

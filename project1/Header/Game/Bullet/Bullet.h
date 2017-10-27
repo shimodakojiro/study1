@@ -8,9 +8,9 @@ private:
 	Vector2 m_PlayerPos;
 	bool m_Flag;
 	int m_Frame;
-	const float mSpeedX = 0.02f;
-	const float mSpeedY = 0.00f;
-	const int m_MaxFrame = 20;
+	const float mSpeedX = 20.0f;
+	const float mSpeedY = 0.0f;
+	const int m_MaxFrame = 3;
 
 public:
 	CBullet();
@@ -18,7 +18,7 @@ public:
 	~CBullet();
 	void Initialize();
 	void Update();
-	void Render();
+	void Render(std::shared_ptr<CTexture>&);
 	void Delete();
 
 

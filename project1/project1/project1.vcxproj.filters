@@ -37,6 +37,12 @@
     <Filter Include="Header\GameObject\Bullet">
       <UniqueIdentifier>{1e382eae-b516-485e-9c46-ef721825f619}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\lib">
+      <UniqueIdentifier>{1cb0cb07-6c4e-4914-a6c7-ab8313e4fb53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\lib">
+      <UniqueIdentifier>{2e216fc4-7e9b-48ea-a326-c2b9d1048365}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\main.cpp">
@@ -59,6 +65,12 @@
     </ClCompile>
     <ClCompile Include="..\Source\Game\Graphic.cpp">
       <Filter>Source\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\lib\Input.cpp">
+      <Filter>Source\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\lib\Texture.cpp">
+      <Filter>Source\lib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="..\Header\Game\Graphic.h">
       <Filter>Header\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\lib\Texture.h">
+      <Filter>Header\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\lib\Input.h">
+      <Filter>Header\lib</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@
 #include<list>
 #include<iterator>
 
-#include"../../Header/Game/Bullet/Bullet.h"
+#include"Game/Bullet/Bullet.h"
 
 class CBulletManager :public CGameBase
 {
@@ -15,8 +15,6 @@ private:
 	std::list<CBullet>m_Bullet;
 	std::list<CBullet>::iterator itr;
 	Vector2 m_PlayerPos;
-
-	int i;
 
 	//長押し時のリピートカウンタ
 	int m_RepCounter;
@@ -32,8 +30,8 @@ public:
 
 	void SetTextureId(const int &idx);
 	void Initialize();
-	void Update();
-	void Render();
+	void Update(std::shared_ptr<CInput>&);
+	void Render(std::shared_ptr<CTexture>&);
 	void Delete();
 
 	void GetTextureId(const int &idx){ texid = idx; }

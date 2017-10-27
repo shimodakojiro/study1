@@ -1,9 +1,11 @@
 
 #include<math.h>
 
-#include"DxLib.h"
-#include"../../Header/Game/GameBase.h"
-#include"../../Header/Game/Player/Player.h"
+#include"main.h"
+#include"Game/GameBase.h"
+#include"lib/Texture.h"
+#include"lib/Input.h"
+#include"Game/Player/Player.h"
 
 CPlayer::CPlayer()
 {
@@ -12,12 +14,13 @@ CPlayer::CPlayer()
 
 CPlayer::~CPlayer()
 {
-	DeleteGraph(texid);
+
 }
 
 void CPlayer::SetTextureId(const int &idx)
 {
 	texid = idx;
+	int y = 0;
 }
 
 void CPlayer::Initialize()
@@ -30,25 +33,27 @@ void CPlayer::Initialize()
 
 }
 
-void CPlayer::Update()
+void CPlayer::Update(const std::shared_ptr<CInput> &key)
 {
 	velocity = Vector2(0.0f,0.0f);
 
-	if (CheckHitKey(KEY_INPUT_W)){
+	if (key->GetInputNow(key->InputW)){
 		velocity.y = -m_Speed;
 	}
-	else if (CheckHitKey(KEY_INPUT_S)){
+	if (key->GetInputNow(key->InputS)){
 		velocity.y = m_Speed;
 	}
-	if (CheckHitKey(KEY_INPUT_A)){
+	if (key->GetInputNow(key->InputA)){
 		velocity.x = -m_Speed;
 	}
-	else if (CheckHitKey(KEY_INPUT_D)){
+	if (key->GetInputNow(key->InputD)){
 		velocity.x = m_Speed;
 	}
 
 	pos.x += velocity.x;
 	pos.y += velocity.y;
+
+	pos = pos + velocity;
 
 	if (pos.x <= 0)pos.x = 0;
 	if (pos.x >= 600)pos.x = 600;
@@ -56,13 +61,14 @@ void CPlayer::Update()
 	if (pos.y >= 600)pos.y = 600;
 }
 
-void CPlayer::Render()
+void CPlayer::Render(const std::shared_ptr<CTexture> &tex)
 {
-	DrawRotaGraph(pos.x, pos.y, 1.0f, angle, texid, TRUE);
+	tex->RenderTex(pos.x, pos.y, texid);
+//	DrawRotaGraph(pos.x, pos.y, 1.0f, angle, texid, TRUE);
 }
 
 void CPlayer::Delete()
 {
-	DeleteGraph(texid);
+
 }
 

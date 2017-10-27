@@ -2,8 +2,6 @@
 #ifndef __GAMEBASE_H__
 #define __GAMEBASE_H__
 
-#define PI 3.141592653589793
-
 class Vector2
 {
 private:

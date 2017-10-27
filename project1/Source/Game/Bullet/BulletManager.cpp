@@ -1,9 +1,11 @@
 
 #include<memory>
 
-#include"DxLib.h"
-#include"../../Header/Game/GameBase.h"
-#include"../../Header/Game/Bullet/BulletManager.h"
+#include"main.h"
+#include"lib/Input.h"
+#include"lib/Texture.h"
+#include"Game/GameBase.h"
+#include"Game/Bullet/BulletManager.h"
 
 CBulletManager::CBulletManager()
 {
@@ -30,46 +32,36 @@ void CBulletManager::Initialize()
 
 	itr->Initialize();
 
-	i = 0;
-
-//	m_RepCounter = m_MaxRepCounter;
-//	m_RepOn = false;
-//	m_NowInput = false;
-//	m_OldInput = false;
 }
 
-void CBulletManager::Update()
+void CBulletManager::Update(std::shared_ptr<CInput>&key)
 {
 	for (itr = m_Bullet.begin(); itr != m_Bullet.end();){
 	itr->SetPlayerPos(m_PlayerPos);
 		itr->Update();
+		if (!itr->GetFlag()){
+			//イテレーターの指定にあった要素を削除
+//			itr = m_Bullet.erase(itr);
+//			m_Bullet.erase(itr);
+		}
 		itr++;
 	}
 	
-/*	if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0){
-		i++;
-		if (i >= 60){
+	if (key->GetInputDown(key->InputMouseLeft)){
 			m_Bullet.push_back(CBullet());
 			itr = m_Bullet.end();
 			itr--;
 			itr->SetTextureId(texid);
 			itr->SetPlayerPos(m_PlayerPos);
 			itr->Initialize();
-			i = 0;
-		}
 	}
-	*/
-
-//	if (!itr->GetFlag()){
-		//イテレーターの指定にあった要素を削除
-//		itr = m_Bullet.erase(itr);
-//		}
+	
 }
 
-void CBulletManager::Render()
+void CBulletManager::Render(std::shared_ptr<CTexture> &tex)
 {
 	for (itr = m_Bullet.begin(); itr != m_Bullet.end();){
-		itr->Render();
+		itr->Render(tex);
 		itr++;
 	}
 }
