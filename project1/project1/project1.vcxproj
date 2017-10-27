@@ -85,6 +85,8 @@
   <ItemGroup>
     <ClCompile Include="..\Source\Game\Bullet\Bullet.cpp" />
     <ClCompile Include="..\Source\Game\Bullet\BulletManager.cpp" />
+    <ClCompile Include="..\Source\Game\Enemy\Enemy.cpp" />
+    <ClCompile Include="..\Source\Game\Enemy\EnemyManager.cpp" />
     <ClCompile Include="..\Source\Game\GameBase.cpp" />
     <ClCompile Include="..\Source\Game\Graphic.cpp" />
     <ClCompile Include="..\Source\Game\Player\Player.cpp" />
@@ -96,6 +98,8 @@
   <ItemGroup>
     <ClInclude Include="..\Header\Game\Bullet\Bullet.h" />
     <ClInclude Include="..\Header\Game\Bullet\BulletManager.h" />
+    <ClInclude Include="..\Header\Game\Enemy\Enemy.h" />
+    <ClInclude Include="..\Header\Game\Enemy\EnemyManager.h" />
     <ClInclude Include="..\Header\Game\GameBase.h" />
     <ClInclude Include="..\Header\Game\Graphic.h" />
     <ClInclude Include="..\Header\Game\Player\Player.h" />

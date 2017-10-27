@@ -42,8 +42,7 @@ void CBullet::Update()
 
 void CBullet::Render(std::shared_ptr<CTexture> &tex)
 {
-	tex->RenderTex(pos.x, pos.y, texid);
-//	DrawRotaGraph(pos.x, pos.y, 1.0f, angle, texid, TRUE);
+	tex->RenderTex(pos, texid);
 }
 
 void CBullet::Delete()

@@ -63,7 +63,7 @@ void CPlayer::Update(const std::shared_ptr<CInput> &key)
 
 void CPlayer::Render(const std::shared_ptr<CTexture> &tex)
 {
-	tex->RenderTex(pos.x, pos.y, texid);
+	tex->RenderTex(pos, texid);
 //	DrawRotaGraph(pos.x, pos.y, 1.0f, angle, texid, TRUE);
 }
 
