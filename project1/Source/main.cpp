@@ -63,7 +63,6 @@ CSceneBase *CApplication::scene = nullptr;
 INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE, LPSTR, INT)
 {
 	MSG msg = { 0 };
-//	CApplication *app = new CApplication();
 
 	std::unique_ptr<CApplication>app;
 	app = std::make_unique<CApplication>();
@@ -171,8 +170,7 @@ HRESULT CApplication::InitD3DWindow(LPCTSTR wintitle, float w, float h)
 			return E_FAIL;
 		}
 	}
-	//Zバッファをオン
-	pd3dDevice->SetRenderState(D3DRS_ZENABLE, TRUE);
+
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
 
 	//DirectInputの初期化

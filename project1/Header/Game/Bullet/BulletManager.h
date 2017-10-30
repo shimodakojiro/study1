@@ -30,8 +30,8 @@ public:
 
 	void SetTextureId(const int &idx);
 	void Initialize();
-	void Update(std::shared_ptr<CInput>&);
-	void Render(std::shared_ptr<CTexture>&);
+	void Update(std::unique_ptr<CInput>&);
+	void Render(std::unique_ptr<CTexture>&);
 	void Delete();
 
 	void GetTextureId(const int &idx){ texid = idx; }

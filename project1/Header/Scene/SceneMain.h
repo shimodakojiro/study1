@@ -12,8 +12,9 @@
 class CSceneMain : public CSceneBase
 {
 private:
-	std::shared_ptr<CInput>m_Key;
-	std::shared_ptr<CTexture>m_Tex;
+//	std::shared_ptr<CInput>m_Key;
+	std::unique_ptr<CInput>m_Key;
+	std::unique_ptr<CTexture>m_Tex;
 	std::unique_ptr<CPlayer>m_Player;
 	std::unique_ptr<CBulletManager>m_BulletManager;
 	std::unique_ptr<CEnemyManager>m_EnemyManager;

@@ -16,8 +16,8 @@ public:
 	~CPlayer();
 
 	void Initialize();
-	void Update(const std::shared_ptr<CInput>&);
-	void Render(const std::shared_ptr<CTexture>&);
+	void Update(const std::unique_ptr<CInput>&);
+	void Render(const std::unique_ptr<CTexture>&);
 //	void Render();
 	void Delete();
 	

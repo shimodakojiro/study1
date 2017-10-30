@@ -18,7 +18,7 @@ public:
 	~CBullet();
 	void Initialize();
 	void Update();
-	void Render(std::shared_ptr<CTexture>&);
+	void Render(std::unique_ptr<CTexture>&);
 	void Delete();
 
 

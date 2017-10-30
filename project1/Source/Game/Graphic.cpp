@@ -3,17 +3,27 @@
 #include"../../Header/lib/Texture.h"
 #include"../../Header/Game/Graphic.h"
 
+/**
+* @brief :コンストラクタ
+*/
 CGraphic::CGraphic()
 {
 
 }
 
+/**
+* @brief :デストラクタ
+*/
 CGraphic::~CGraphic()
 {
 
 }
 
-void CGraphic::Load(const std::shared_ptr<CTexture> &tex)
+/**
+* @brief :画像読み込み
+* @param tex	:テクスチャクラス
+*/
+void CGraphic::Load(const std::unique_ptr<CTexture> &tex)
 {
 	m_Player = tex->LoadTex("../Resource/Player/player.png");
 	m_Bullet = tex->LoadTex("../Resource/Bullet/bullet.png");
